@@ -3,7 +3,7 @@ for (let i in notas) {
   //trás o indices do array
   console.log(i, notas[i]);
 }
-const pessoa = {
+/* const pessoa = {
   nome: 'Ana',
   sobrenome: 'Silva',
   idade: 29,
@@ -12,4 +12,4 @@ const pessoa = {
 
 for (let atributo in pessoa) {
   console.log(`${atributo} = ${pessoa[atributo]}`);
-}
+} */
