@@ -1,0 +1,24 @@
+{
+  "name": "funcionarios",
+  "version": "1.0.0",
+  "description": "dsafdsfas",
+  "main": "funcionarios.js",
+  "scripts": {
+    "start": "nodemon",
+    "dev": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "duhasuifhaus"
+  },
+  "keywords": [
+    "hdausfhuasdhfuasd"
+  ],
+  "author": "Felipe",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "nodemon": "^2.0.4"
+  }
+}
