@@ -1,51 +1,193 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Desafio Menu</title>
-    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Oswald"
+      rel="stylesheet"
+    />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
     <style>
-        /* ... */
-    </style>
-</head>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        /* removendo a margin */
+        margin: 0;
+        /* Aplicando fonte externa */
+        font-family: 'Oswald', sans-serif;
+        /* Definindo plano de fundo */
+        background-color: lightgray;
+      }
+      .cabecalho {
+        /* COR DE FUNDO */
+        background: #333;
+        /* bordar no fundo */
+        border-bottom: solid 5px #4faddb;
+        /* Altura */
+        height: 80px;
+        /* Definindo tamanho a ser utilizado */
+        box-sizing: content-box;
+      }
+      .logo {
+        /* exibição */
+        display: inline-block;
+        /* altura */
+        height: 80px;
+        /* espaçamento interno */
+        padding: 15px;
+      }
+      .logo img {
+        /* Ocupando o tamanho do paii */
+        height: 100%;
+      }
 
-<body>
+      .menu-toggle {
+        /* Local onde irá ser exibido */
+        float: right;
+        /* Cor de texto */
+        color: #eee;
+        /* Cor de fundo */
+        background-color: #555;
+        /* Bordas */
+        border: solid 1px #777;
+        border-radius: 5px;
+        /* Altura */
+        height: 40px;
+        /* espamento interno*/
+        padding: 10px 20px;
+        /* espaçamento externo */
+        margin: 20px 15px;
+      }
+
+      .menu {
+        /* posicionamento */
+        display: inline-block;
+        /* Alinhamento */
+        vertical-align: top;
+        /* altura */
+        height: 80px;
+        /* Espaçamento interno */
+        padding: 25px;
+      }
+      .menu ul {
+        /* espaçamento externo */
+        margin: 0;
+        /* espaçamento interno */
+        padding: 0;
+      }
+      .menu li {
+        /* posicionamento  */
+        display: inline-block;
+      }
+      .cabecalho a {
+        /* estilo de texto */
+        text-decoration: none;
+        /* Cor do texto */
+        color: #eee;
+        /* Tamanho da Fonte */
+        font-size: 1.3em;
+      }
+      .menu a {
+        /* Espaçamento interno */
+        padding: 15px;
+      }
+      .autenticacao {
+        /* posionamento na tela */
+        float: right;
+        /* Altura do elemento */
+        height: 80px;
+        /* Espaçamento interno */
+        padding: 25px;
+      }
+      .menu a:hover,
+      .menu a.selected {
+        /* Cor do plano de fundo */
+        background-color: #4faddb;
+        /* cor do texto */
+        color: #000;
+      }
+      .botao {
+        /* bordas */
+        border-radius: 30px;
+        /* espaçamentos interno */
+        padding: 10px 25px;
+        /* espaçamento externo */
+        margin: 10px;
+      }
+      .destaque {
+        /* plano de fundo */
+        background: #f50a31;
+        /* cor do texto */
+        color: #fff;
+      }
+      @media (min-width: 679px) {
+        .menu-toggle {
+          display: none;
+        }
+      }
+      @media (max-width: 680px) {
+        .menu {
+          display: none;
+        }
+      }
+      @media (max-width: 910px) {
+        .autenticacao {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
     <header class="cabecalho">
-        <div class="logo">
-            <a href="#inicio">
-                <img src="http://files.cod3r.com.br/curso-web/logo.png" alt="Logo" />
-            </a>
-        </div>
-        <button class="menu-toggle">
-            <i class="fa fa-lg fa-bars"></i>
-        </button>
-        <nav class="menu">
-            <ul>
-                <li>
-                    <a href="#inicio">Início</a>
-                </li>
-                <li>
-                    <a href="#cursos">Cursos</a>
-                </li>
-                <li>
-                    <a href="#sobre">Sobre</a>
-                </li>
-                <li>
-                    <a href="#contato">Contato</a>
-                </li>
-            </ul>
-        </nav>
-        <aside class="autenticacao">
-            <a href="#login">Login</a>
-            <a href="#registar" class="botao destaque">Registrar</a>
-        </aside>
+      <div class="logo">
+        <a href="#inicio">
+          <img src="http://files.cod3r.com.br/curso-web/logo.png" alt="Logo" />
+        </a>
+      </div>
+      <button class="menu-toggle">
+        <i class="fa fa-lg fa-bars"></i>
+      </button>
+      <nav class="menu">
+        <ul>
+          <li>
+            <a href="#inicio">Início</a>
+          </li>
+          <li>
+            <a href="#cursos">Cursos</a>
+          </li>
+          <li>
+            <a href="#sobre">Sobre</a>
+          </li>
+          <li>
+            <a href="#contato">Contato</a>
+          </li>
+        </ul>
+      </nav>
+      <aside class="autenticacao">
+        <a href="#login">Login</a>
+        <a href="#registar" class="botao destaque">Registrar</a>
+      </aside>
     </header>
 
     <script>
-        // ...
+      /* monitora o href # */
+      window.onhashchange = function (e) {
+        /* Buscando o que esta depois do serquilha */
+        const oldURL = e.oldURL.split('#')[1];
+        const newURL = e.newURL.split('#')[1];
+        /* selecionando o menu */
+        const oldMenu = document.querySelector(`.menu [href='#${oldURL}']`);
+        const newMenu = document.querySelector(`.menu a[href='#${newURL}']`);
+        /* removendo a classe  */
+        oldMenu && oldMenu.classList.remove('selected');
+        newMenu && newMenu.classList.add('selected');
+      };
     </script>
-</body>
-
+  </body>
 </html>
