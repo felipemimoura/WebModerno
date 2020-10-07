@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Selecionar Elementos #01</title>
+    <link rel="stylesheet" href="css/estilo.css" />
+  </head>
+  <body class="conteudo exercicio">
+    <div id="primeiro">#primeiro</div>
+    <div>Segundo</div>
+    <div class="terceiro ultimo">.terceiro .ultimo</div>
+    <script>
+      //Selecionado um elemento pelo ID
+      document.getElementById('primeiro').classList.add('destaque');
+
+      //Selecionando pela tag
+
+      const divs = document.getElementsByTagName('div'); //vai retornar um html collection
+      console.log(divs);
+      //Transforar em array para maninupular
+      Array.from(divs).forEach((e) => e.classList.remove('destaque'));
+      /* 2) Maneira de transformar em array */
+      const divsArray = [...divs];
+      divsArray.forEach((e) => e.classList.add('destaque'));
+
+      //Selecionando pela classe
+      const ultimosElementos = document.getElementsByClassName('ultimo'); //Retonar um html collecion
+      for (let e of ultimosElementos) {
+        e.classList.remove('destaque');
+      }
+    </script>
+  </body>
+</html>
